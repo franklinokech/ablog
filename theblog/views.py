@@ -4,12 +4,14 @@ from .models import Post
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
 
+
 # def home(request):
 #     return render(request, 'theblog/index.html', {})
 
 class HomeView(ListView):
     model = Post
     template_name = 'theblog/index.html'
+    ordering = ['-post_date']
     # ordering = ['-id']
 
 
